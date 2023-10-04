@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <div class="h2 text-center fw-bold">Register<b style="color:#d50000">Yourself</b></div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 p-5 bg-danger">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            Name: <input type="text" class="form-control p-1 fw-bold" style="color:#d50000;" name="name" placeholder="Enter Your Name..."/>
+            Email: <input type="email" class="form-control p-1 fw-bold" style="color:#d50000;" name="email" placeholder="Enter Your Email..."/>
+            Password: <input type="password" class="form-control p-1 fw-bold" style="color:#d50000;" name="passwd" placeholder="Enter Your Email..."/>
+            Mobile: <input type="text" class="form-control p-1 fw-bold" style="color:#d50000;" name="mobile" placeholder="Enter Your Mobile Number..."/>
+            Profile Picture: <input type="file" class="form-control p-1 fw-bold" style="color:#d50000;" name="fu" placeholder=/>
+            Address: <textarea placeholder="Enter Your Adrress..." style="color:#d50000;resize:none; " class="fw-bold form-control p-1" name="address"  ></textarea>
+                <input type="submit" Value="SAVE" class="btn btn-danger fw-bold form-control"/>
+        </form>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+{% endblock %}

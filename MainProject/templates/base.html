@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+        The Daily Newspaper
+        {% endblock %}
+    </title>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet"/>
+    <link href="{% static 'css/font-awesome.css'%}" rel="stylesheet"/>
+    <link href="{% static 'images/news.png' %}" rel="icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .top
+        {
+        min-height:30px;
+        }
+        .header1
+        {
+        min-height:50px;
+        }
+        .logo
+        {
+        line-height:10px;
+        text-align:center;
+
+        }
+        .ic a
+        {
+
+        }
+        .ic:hover
+        {
+        color:#d50000;
+        }
+        .menu
+        {
+        //font-weight:bold;
+        min-height:40px;
+        background:#d50000;
+        font-size:13px;
+        padding:0px 200px;
+        box-sizing:border-box;
+        }
+        #menu ul li a
+        {
+        //font-weight:bold;
+        color:white;
+        transition:all ease 1s;
+        }
+        #menu ul li a:hover
+        {
+        //border:1px solid black;
+        box-sizing:border-box;
+        background:white;
+        color:#d50000;
+        border-radius:5px;
+        transition:all ease 1s;
+        //font-weight:bold;
+        }
+        .slider
+        {
+        min-height:300px;
+        }
+        .latest
+        {
+        min-height:50px;
+        text-align:center;
+        font-weight:bold;
+        font-size:30px;
+        padding-bottom:10px;
+        color:#d50000;
+        }
+        .ufooter
+        {
+        font-size:13px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container-fluid outer">
+    <div class="row border-bottom top p-1 text-center">
+        <div class="col-sm-3   border-end" style="color:#d50000;" id="date">
+            <script>
+       //document.write(new Date().toLocaleDateString());
+       n=new Date();
+       y=n.getFullYear();
+       m=n.getMonth()+1;
+       d=n.getDate();
+       document.getElementById("date").innerHTML=d + "/" +m+ "/" +y
+
+            </script>
+        </div>
+        <div class="col-sm-6 text-dark  border-end">
+            <b>BE IN TOUCH WITH THE WORLD ANYWHERE & ANYTIME</b>
+        </div>
+        <div class="col-sm-3 ">
+            <a class="fa fa-facebook px-1 text-primary ic " style="text-decoration:none;"
+               href="https://www.facebook.com/ambuj.srivastava.3532/"></a>
+            <a class="fa fa-youtube px-1 text-danger ic" style="text-decoration"
+               href="https://www.youtube.com/channel/UCIDaiduaPILL1HD24s_VgBA"></a>
+            <a class="fa fa-whatsapp px-1 text-success ic" title="7390923288" href="https://wa.me/+917390923288"
+               style="text-decoration:none;"></a>
+            <a class="fa fa-instagram px-1  text-danger ic" href="https://www.instagram.com/ambujthesrivastava/"
+               style="text-decoration:none;"></a>
+            <a class="fa fa-twitter px-1  text-primary ic" href="" style="text-decoration:none;"></a>
+        </div>
+    </div>
+
+    <div class="row header1 border-bottom p-1 ">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 fs-4 fw-bold logo">
+            <a href="/thedailynewspaper/home/" style="text-decoration:none; color:black;"><i
+                    class="fa fa-newspaper-o text-danger"></i><b>THE DAILY</b><br/><b class="text-danger">NEWSPAPER</b></a>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+    <div class="row menu sticky-top">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <!--START MENU -->
+            <nav class="navbar  navbar-expand-lg navbar-light " id="menu">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active py-1" aria-current="page" href="/thedailynewspaper/home/"><i
+                                        class="fa fa-home"></i> Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link py-1" href="/thedailynewspaper/viewnews/"><i
+                                        class="fa fa-newspaper-o"></i> View News</a>
+                            </li>
+                            <!-- <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle py-1"  href="/thedailynewspaper/viewnews/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                               <i class="fa fa-newspaper-o"></i> View News
+                             </a>
+                             <ul class="dropdown-menu bg-light"  aria-labelledby="navbarDropdownMenuLink">
+                               <li><a class="dropdown-item" style="color:#d50000;" href="#">Latest</a></li>
+                               <li><a class="dropdown-item" style="color:#d50000;" href="#">Politics</a></li>
+                               <li><a class="dropdown-item" style="color:#d50000;" href="#">Sports</a></li>
+                               <li><a class="dropdown-item" style="color:#d50000;" href="#">Classified</a></li>
+                               <li><a class="dropdown-item" style="color:#d50000;" href="#">Entertainment</a></li>
+                               <li><a class="dropdown-item" style="color:#d50000;" href="#">World News</a></li>
+                               <li><a class="dropdown-item" style="color:#d50000;" href="#">Near By</a></li>
+                             </ul>
+                           </li>-->
+                            <li class="nav-item">
+                                <a class="nav-link py-1" href="/thedailynewspaper/videos/"><i
+                                        class="fa fa-video-camera"></i> Videos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link py-1" href="/thedailynewspaper/about/"><i class="fa fa-users"></i>
+                                    About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link py-1" href="/thedailynewspaper/contactus/"><i
+                                        class="fa fa-handshake-o"></i> Contact Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link py-1" href="/admin/"><i class="fa fa-sign-in"></i> Login</a>
+                            </li>
+                            <!--<li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle py-1" href="/thedailynewspaper/login/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                            </a>
+                            <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
+                              <li><a class="dropdown-item" style="color:#d50000;" href="#">Admin</a></li>
+                              <li><a class="dropdown-item" style="color:#d50000;" href="#">User</a></li>
+                            </ul>
+                          </li>-->
+                            <li class="nav-item">
+                                <a class="nav-link py-1" href="/thedailynewspaper/publish/"><i
+                                        class="fa fa-handshake-o"></i> Publish Ad</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!--End MENU -->
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+
+
+    <div class="row content">
+        <div class="col-sm-12">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+
+
+    <div class="row ufooter py-5 bg-light">
+        <div class="col-md-4 px-4 img-fluid">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3635689.
+            793072721!2d80.8833819!3d27.141237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!
+            4v1632583385808!5m2!1sen!2sin" width="350" height="250" style="border:0;" allowfullscreen=""
+                    loading="lazy"></iframe>
+        </div>
+        <div class="col-md-4  text-dark p-2 px-5 img-fluid">
+            <b style=" font-size:25px;"><span class="text-danger" style="border-bottom:3px solid black;">Contact</span>
+                <span style="border-bottom:3px solid #d50000;">Address</span></b>
+            <br/><br/>
+            <i class="fa fa-home text-danger "></i>Vill. & Post Khapradih, Distt. Ayodhya,<br/> Uttar Pradesh,
+            224205<br/>
+            <br/>
+            <i class="fa fa-phone text-danger"></i> <a href="tel:+91 7390923288"
+                                                       style="text-decoration:none; color:black;">+91
+            7390923288</a><br/>
+            <i class="fa fa-phone text-danger"></i> <a href="tel:+91 8707351757"
+                                                       style="text-decoration:none; color:black;">+91
+            8707351757</a><br/>
+            <i class="fa fa-envelope text-danger"></i> <a href="mailto:asrimbuj@gmail.com"
+                                                          style="text-decoration:none; color:black;">asrimbuj@gmail.com</a><br/>
+
+        </div>
+        <div class="col-md-4 fs-5 text-dark fw-bold py-3 px-5" style="line-height:10px;">
+            <i class="fa fa-newspaper-o text-danger "></i><b>THE DAILY</b><br/><b class="text-danger">NEWSPAPER</b><br/><br/>
+            <span style="font-size:13px; line-height:25px; font-weight:normal;">THE DAILY NEWSPAPER never works on rumours.
+                It transfers the real news to the people. It provides detailed information about issues taking place all over the world.</span>
+        </div>
+    </div>
+    <div class="row bfooter text-light bg-dark text-center py-2 border border-top " style="font-size:13px;">
+        <div class="col-sm-4">
+            Devloped By: Ambuj Srivastava
+        </div>
+        <div class="col-sm-4">
+           <a class="fa fa-facebook px-1 text-primary ic " style="text-decoration:none;"
+               href="https://www.facebook.com/ambuj.srivastava.3532/"></a>
+            <a class="fa fa-youtube px-1 text-danger ic" style="text-decoration"
+               href="https://www.youtube.com/channel/UCIDaiduaPILL1HD24s_VgBA"></a>
+            <a class="fa fa-whatsapp px-1 text-success ic" title="7390923288" href="https://wa.me/+917390923288"
+               style="text-decoration:none;"></a>
+            <a class="fa fa-instagram px-1  text-danger ic" href="https://www.instagram.com/ambujthesrivastava/"
+               style="text-decoration:none;"></a>
+            <i class="fa fa-twitter px-1  text-primary ic"></i>
+        </div>
+        <div class="col-sm-4">
+            Copyright &copy; The Daily Newspaper
+        </div>
+    </div>
+</div>
+</body>
+</html>

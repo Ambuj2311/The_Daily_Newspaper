@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+View News
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-2 my-2 fixed-right ">
+        <h5>Choose<b style="color:#d50000;"> Category</b></h5>
+        <hr/>
+        <a href="#" style="text-decoration:none;color:black;">
+            <ul class="list-group list-group-flush ">
+                {% if c %}
+                {% for a in c %}
+
+                <li class="list-group-item"><a href="/thedailynewspaper/viewnews?abc={{a.id}}"
+                                               style="text-decoration:none;">{{a.cname}}</a></li>
+
+                {% endfor %}
+                {% endif %}
+            </ul>
+        </a>
+    </div>
+    <div class="col-sm-10">
+        <div class="row">
+            {% if n %}
+            {% for a in n %}
+            <div class="col-sm-3 p-1">
+                <div class="card w-100 h-100 px-1">
+                    <div class="h4 text-center fw-bold bg-light">{{a.ncategory}}</div>
+                    <img src="/{{a.newspic}} " class="card-img-top w-100 border-end" alt="{{a.newspic}}"/>
+
+                    <b class="fw-bold" style="font-size:17px; text-decoration:underline;">{{a.headlines}}</b><br/>
+                    <b style="font-size:14px;">{{a.subject}}</b>
+                    <p class="card-text">{{a.newsdes|slice:":180"}}<a
+                            href="/thedailynewspaper/viewmore?msg={{a.id}}" target="_blank">View
+                        More...</a><br/></p>
+                    <p class="card-text"><small class="text-muted">Date: {{a.ndate}} City:
+                        {{a.city}}</small></p>
+
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

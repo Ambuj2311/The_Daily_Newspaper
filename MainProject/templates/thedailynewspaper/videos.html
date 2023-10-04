@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Video Gallery
+{% endblock %}
+{% block content %}
+<style>
+    .vid:hover
+    {
+    border:1px solid #d50000;
+    transition:all ease 1s;
+    box-sizing:border-box;
+    }
+    .vid
+    {
+    transition:all ease 1s;
+    }
+</style>
+<div class="row">
+    <div class="h2 text-center fw-bold py-2 my-2">Video <b style="color:#d50000;">Gallery</b><i class="fa fa-live"></i></div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="row">
+            <!--start-->
+            {% if video %}
+            {% for x in video %}
+            <div class="col-sm-4">
+<div class="card vid h-100">
+    <iframe class="card-img-top w-100"  src="{{x.vlink}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <div class="card-body">
+    <h5 class="card-title">{{x.vtitle}}</h5>
+    <p class="card-text">{{x.vdes}}</p>
+  </div>
+</div>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <!-- end-->
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+{% endblock %}

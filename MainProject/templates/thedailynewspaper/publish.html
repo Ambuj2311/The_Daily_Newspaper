@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="row p-2 my-3">
+            <div class="col-sm-12 h4 fw-bold text-center">
+                <span style="border-bottom: 2px solid #d50000;">Publish</span> <b style="color:#d50000;">Your
+                Ad</b><br/>
+                <span style="font-size:13px;">Make your company reach Thousands of people visiting us daily.</span>
+            </div>
+        </div>
+        {% if s %}
+        <div class="alert alert-success text-center">
+            Thanks For Joining Us, Our Costumer Executive Will Contact You Soon For More Details...
+        </div>
+        {% endif %}
+        <div class="row bg-light p-3 my-2" style="font-size:14px; border-radius:5px;">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <form method="post" autocomplete="off" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            {% csrf_token %}
+                            Enter Your Name: <input type="text" name="name" placeholder="Your Full Name..."
+                                                    class="form-control p-1 my-1" required style="font-size:13px;"/>
+                            Enter Your Email: <input type="email" required name="mail" placeholder="Your Email..."
+                                                     class="form-control p-1 my-1" style="font-size:13px;"/>
+                            Enter Your Mobile: <input type="text" required name="mobile" placeholder="Your Contact Number..."
+                                                      class="form-control p-1 my-1" style="font-size:13px;"/>
+                            Enter Your Company Name: <input type="Text" name="cname" required placeholder="Your Company Name..."
+                                                            class="form-control p-1 my-1" style="font-size:13px;"/>
+                        </div>
+                        <div class="col-sm-6">
+                            Enter Your Website's URL : <input type="Text" name="webad" placeholder="Your Web Address..."
+                                                              class="form-control p-1 my-1" style="font-size:13px;"/>
+
+                            Describe Your Advertisement <textarea style="font-size:13px; resize:none;"
+                                                                  class="form-control p-1 my-1"
+                                                                  name="des" placeholder="About Your Company..."></textarea>
+                            Attach Your Banner or Video <input type="file" name="banner" required class="form-control p-1 my-1"
+                                                               style="font-size:13px;"/>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-5"></div>
+                            <div class="col-sm-2">
+                                <input type="submit" value="Save" style="font-size:15px; font-weight:bold;color:white;"
+                                       class="form-control bg-danger"/>
+                            </div>
+                            <div class="col-sm-5"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+</div>
+<div class="col-sm-1"></div>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+About TDN
+{% endblock %}
+{% block content %}
+<div class="row py-3">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6 h3 fw-bold text-center">
+        <span style="border-bottom: 3px solid #d50000;">ABOUT</span> <b style="color:#d50000;">TDN</b>
+    </div>
+    <div class="col-sm-3"></div>
+    <div class="row py-4 my-2 text-center">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            TDN never works on rumours.
+            It transfers the real news to the people.
+            It provides detailed information about issues taking place all over the world.
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+    <div class="row " style="font-size:13px;min-height:300px">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-2" style="min-height:250px;">
+            <div class="card w-100">
+                <img src="{% static 'images/wifi.png' %}" style="height:100px;"  class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">
+                        <h6>Large <b style="color:#d50000;">Coverage</b></h6><hr/>
+                        TDN has large coverage area, it highlights the issues taking place most frequently.
+                        <br/> Works for the people and convince them with the information provided.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2" style="min-height:250px;">
+            <div class="card w-100">
+                <img src="{% static 'images/fakenews.jpg' %}" style="height:100px;"  class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">
+                        <h6>Real <b style="color:#d50000;">News</b></h6><hr/>
+                        TDN provides real news to the people.
+                        <br/> Its main objective is to grasp people's attention.<br/><br/><br/><br/><br/>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2" style="min-height:250px;">
+            <div class="card w-100">
+                <img src="{% static 'images/easyread.jpg' %}" style="height:100px;" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">
+                        <h6>Reader's<b style="color:#d50000"> Freindly</b></h6><hr/>
+                        TDN believes that <b>factfull information is always better than more information.</b>
+                    <br/> It provides news with humor, terseness, descriptive and with good litracy.
+                    </p>
+                </div>
+            </div>
+        </div>
+<div class="col-sm-3"></div>
+    </div>
+</div>
+{% endblock %}
